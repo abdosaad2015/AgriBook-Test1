@@ -29,7 +29,8 @@ import { AdminAuthGuardService } from './admin-auth-guard.service';
 import { ProductFormComponent } from './admin/product-form/product-form.component';
 import { CategoryService } from './category.service';
 import { ProductService } from './product.service';
-import { CustomFormsModule } from 'ng2-validation'
+import { CustomFormsModule } from 'ng2-validation';
+import { EditFormComponent } from './edit-form/edit-form.component'
 
 
 @NgModule({
@@ -45,7 +46,8 @@ import { CustomFormsModule } from 'ng2-validation'
     AdminOrdersComponent,
     LoginComponent,
     CheckoutComponent,
-    ProductFormComponent
+    ProductFormComponent,
+    EditFormComponent
   ],
   imports: [
     BrowserModule,
