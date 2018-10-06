@@ -1,8 +1,5 @@
-import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { NavbarComponent } from './navbar/navbar.component';
@@ -32,7 +29,14 @@ import { ProductService } from './product.service';
 import { CustomFormsModule } from 'ng2-validation';
 import { EditFormComponent } from './edit-form/edit-form.component'
 
+import { NgModule } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { HttpClient, HttpClientModule, HttpClientJsonpModule } from '@angular/common/http';
+import { ReactiveFormsModule } from '@angular/forms';
 
+import { DialogModule } from '@progress/kendo-angular-dialog';
+import { GridModule } from '@progress/kendo-angular-grid';
 @NgModule({
   declarations: [
     AppComponent,
@@ -56,6 +60,10 @@ import { EditFormComponent } from './edit-form/edit-form.component'
     FormsModule,
     HttpModule,
     CustomFormsModule,
+    HttpClient, HttpClientModule, HttpClientJsonpModule,
+    ReactiveFormsModule,
+    DialogModule,
+    GridModule,
     RouterModule.forRoot([
       { path : '' ,component: HomeComponent},
       { path : 'products' , component: ProductsComponent},
