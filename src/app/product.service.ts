@@ -30,7 +30,7 @@ export class ProductService {
     return this.products$;
   }
 }
-export interface product {
+export class product {
   id?: string;
   category?: string;
   imageUrl?: string;

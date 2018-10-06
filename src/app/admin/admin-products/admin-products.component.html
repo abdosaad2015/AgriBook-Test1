@@ -1,4 +1,31 @@
 <a routerLink="/admin/products/new" class="btn btn-primary">new Product</a>
 <div class="col-md-10 col-md-offest-1">
-    
+    <kendo-grid
+    [data]="view | async"
+    [height]="533"
+    [pageSize]="gridState.take" [skip]="gridState.skip" [sort]="gridState.sort"
+    [pageable]="true" [sortable]="true"
+    (dataStateChange)="onStateChange($event)"
+    (edit)="editHandler($event)" (remove)="removeHandler($event)"
+    (add)="addHandler($event)"
+  >
+  <ng-template kendoGridToolbarTemplate>
+      <button kendoGridAddCommand>Add new</button>
+  </ng-template>
+  <kendo-grid-column field="ProductName" title="Product Name"></kendo-grid-column>
+  <kendo-grid-column field="UnitPrice" title="Price"></kendo-grid-column>
+  <kendo-grid-column field="Discontinued" title="Discontinued"></kendo-grid-column>
+  <kendo-grid-column field="UnitsInStock" title="Units In Stock"></kendo-grid-column>
+  <kendo-grid-command-column title="command" width="220">
+      <ng-template kendoGridCellTemplate>
+          <button kendoGridEditCommand [primary]="true">Edit</button>
+          <button kendoGridRemoveCommand>Delete</button>
+      </ng-template>
+  </kendo-grid-command-column>
+</kendo-grid>
+
+<app-edit-form [model]="editDataItem" [isNew]="isNew"
+    (save)="saveHandler($event)"
+    (cancel)="cancelHandler()">
+</app-edit-form>
 </div>

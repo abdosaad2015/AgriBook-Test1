@@ -37,6 +37,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 
 import { DialogModule } from '@progress/kendo-angular-dialog';
 import { GridModule } from '@progress/kendo-angular-grid';
+import { EditServService } from './edit-serv.service';
 @NgModule({
   declarations: [
     AppComponent,
@@ -60,7 +61,9 @@ import { GridModule } from '@progress/kendo-angular-grid';
     FormsModule,
     HttpModule,
     CustomFormsModule,
-    HttpClient, HttpClientModule, HttpClientJsonpModule,
+    HttpClient,
+    HttpClientModule,
+    HttpClientJsonpModule,
     ReactiveFormsModule,
     DialogModule,
     GridModule,
@@ -86,6 +89,11 @@ import { GridModule } from '@progress/kendo-angular-grid';
     ],
     
   providers: [
+    {
+      deps: [HttpClient],
+      provide: EditServService,
+      useFactory: (jsonp: HttpClient) => () => new EditServService(jsonp)
+  },
     AuthService,
     AuthGuardService,
     AdminAuthGuardService,

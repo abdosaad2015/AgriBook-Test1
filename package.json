@@ -27,6 +27,7 @@
     "@progress/kendo-angular-conversational-ui": "^1.0.0",
     "@progress/kendo-angular-dateinputs": "^3.4.4",
     "@progress/kendo-angular-dialog": "^3.7.0",
+    "@progress/kendo-angular-dropdowns": "^3.1.0",
     "@progress/kendo-angular-excel-export": "^2.1.2",
     "@progress/kendo-angular-gauges": "^2.3.2",
     "@progress/kendo-angular-grid": "^3.7.1",
