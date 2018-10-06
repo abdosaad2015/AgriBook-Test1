@@ -61,7 +61,6 @@ import { EditServService } from './edit-serv.service';
     FormsModule,
     HttpModule,
     CustomFormsModule,
-    HttpClient,
     HttpClientModule,
     HttpClientJsonpModule,
     ReactiveFormsModule,
